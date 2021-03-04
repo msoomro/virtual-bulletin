@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-    has_many :goals
-    has_many :tasks, through: :goals
+    has_many :posts
+    has_many :bulletin_boards
+    has_many :categories, through: :posts
 
 end
