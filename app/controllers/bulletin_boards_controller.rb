@@ -1,0 +1,3 @@
+class BulletinBoardsController < ApplicationController
+
+end
