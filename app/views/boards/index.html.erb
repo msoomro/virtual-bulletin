@@ -3,7 +3,9 @@
 <ul>
 <% @boards.each do |board| %>
     <li>
+        <a href="/boards/<%= board.id %>">
         <%= board.title %>
+        </a>
     </li>
 <% end %>
 </ul>
