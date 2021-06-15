@@ -1,0 +1,12 @@
+<h1>Edit <%= @board.title %></h1>
+
+<form action="/boards/<%= @board.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label for="title">Title</label><br>
+    <input type="text" id="title" name="board[title]" value="<%= @board.title %>"><br>
+    <label for="description">Description</label><br>
+    <textarea id="description" name="board[description]" rows="4" cols="32"><%= @board.description %></textarea><br>
+
+    <button type="submit">Submit Changes</button>
+    <a href="/boards/<%= @board.id %>">Cancel</a>
+</form>

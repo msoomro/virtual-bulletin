@@ -23,4 +23,17 @@ class BoardsController < ApplicationController
         erb :"/boards/show.html"
     end
 
+    #edit
+    get "/boards/:id/edit" do
+        @board = Board.find(params[:id])
+        erb :"boards/edit.html"
+    end
+
+    #patch
+    patch "/boards/:id" do
+        board = Board.find(params[:id])
+        board.update(params[:board])
+        redirect "/boards/#{board.id}"
+    end
+
 end
