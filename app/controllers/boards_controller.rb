@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
         @board = current_user.boards.create(params[:board])
         redirect "/boards/#{@board.id}"
     end
-    
+
     #index
     get "/boards" do
         @boards = Board.all
