@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     erb :"users/show.html"
   end
 
+  get "/profile" do
+    redirect "/users/#{current_user.id}"
+  end
+
   # new
   get "/users/new" do
     erb :"users/new.html"
