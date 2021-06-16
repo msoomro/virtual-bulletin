@@ -36,4 +36,11 @@ class BoardsController < ApplicationController
         redirect "/boards/#{board.id}"
     end
 
+    #delete
+    delete "/boards/:id" do
+        board = Board.find(params[:id])
+        board.destroy
+        redirect "/boards"
+    end
+
 end
