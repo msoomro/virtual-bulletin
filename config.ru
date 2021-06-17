@@ -9,3 +9,4 @@ run ApplicationController
 use UsersController
 use SessionsController
 use BoardsController
+use PostsController
