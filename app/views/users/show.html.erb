@@ -1,2 +1,16 @@
 <h1><%= @user.username %></h1>
-<p>TBC...</p>
+<hr><br>
+
+<% if @user.boards.any? %>
+    <h3>Boards</h3>
+    <% @user.boards.each do |board| %>
+        <a href="/boards/<%= board.id %>">
+            <%= board.title %>
+        </a><br>
+    <% end %>
+<% else %>
+    <p>No boards</p>
+    <% if @user == current_user %>
+        <p><a href="/boards/new">Create your first board!</a></p>
+    <% end %>
+<% end %>
