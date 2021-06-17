@@ -2,6 +2,7 @@ class BoardsController < ApplicationController
 
     #new
     get "/boards/new" do
+        redirect_if_not_logged_in
         erb :"boards/new.html"
     end
     
