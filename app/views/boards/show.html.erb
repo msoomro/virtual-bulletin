@@ -3,8 +3,10 @@
 <br><hr><br>
 <p><%= @board.description %></p>
 
-<a href="/boards/<%= @board.id %>/edit">Edit Board</a>
-<form action="/boards/<%= @board.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button class="deletebtn" type="submit">Delete Board</button>
-</form>
+<% if current_user == @board.user %>
+    <a href="/boards/<%= @board.id %>/edit">Edit Board</a>
+    <form action="/boards/<%= @board.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="deletebtn" type="submit">Delete Board</button>
+    </form>
+<% end %>

@@ -37,19 +37,23 @@ class BoardsController < ApplicationController
     #patch
     patch "/boards/:id" do
         board = Board.find(params[:id])
-        if board.update(params[:board])
-            redirect "/boards/#{board.id}"
-        else
-            flash[:errors] = board.errors.full_messages
-            redirect "/boards/#{board.id}/edit"
+        if board.user == current_user
+            if board.update(params[:board])
+                redirect "/boards/#{board.id}"
+            else
+                flash[:errors] = board.errors.full_messages
+                redirect "/boards/#{board.id}/edit"
+            end
         end
     end
 
     #delete
     delete "/boards/:id" do
         board = Board.find(params[:id])
-        board.destroy
-        redirect "/boards"
+        if board.user == current_user
+            board.destroy
+            redirect "/boards"
+        end
     end
 
 end
