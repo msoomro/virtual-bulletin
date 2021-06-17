@@ -8,7 +8,12 @@ class BoardsController < ApplicationController
     #create
     post "/boards" do
         @board = current_user.boards.create(params[:board])
-        redirect "/boards/#{@board.id}"
+        if @board.valid?
+            redirect "/boards/#{@board.id}"
+        else
+            flash[:errors] = @board.errors.full_messages
+            redirect "/boards/new"
+        end
     end
 
     #index
@@ -32,8 +37,12 @@ class BoardsController < ApplicationController
     #patch
     patch "/boards/:id" do
         board = Board.find(params[:id])
-        board.update(params[:board])
-        redirect "/boards/#{board.id}"
+        if board.update(params[:board])
+            redirect "/boards/#{board.id}"
+        else
+            flash[:errors] = board.errors.full_messages
+            redirect "/boards/#{board.id}/edit"
+        end
     end
 
     #delete
