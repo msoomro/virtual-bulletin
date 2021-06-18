@@ -300,6 +300,15 @@
     color: #fff;
   }
 
+  /* --- Post --- */
+    /* Post Edit */
+    .post-edit-wrapper {
+      margin: -5px;
+      padding: 30px;
+      color: #fff;
+      background-color: rgba(0,0,0,.9);
+    }
+
 }
 
 @media screen and (max-width: 600px) {

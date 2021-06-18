@@ -1,11 +1,16 @@
-<h1>Edit Post</h1>
+<section class="post-edit-wrapper">
+    <h1>Edit Post</h1>
 
-<form action="/boards/<%= @board.id %>/posts/<%= @post.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <label for="title">New Post: </label>
-    <input type="text" id="title" placeholder="Title" name="post[title]" value="<%= @post.title %>"><br>
-    <label for="content"> </label><br>
-    <textarea id="content" placeholder="This post is about..." name="post[content]" rows="3" cols="50"><%= @post.content %></textarea><br>
-    <button type="submit">Submit Changes</button>
-    <a href="/boards/<%= @board.id %>">Cancel</a>
-</form>
+    <form action="/boards/<%= @board.id %>/posts/<%= @post.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <div class="form-field">
+            <input type="text" id="title" placeholder="Post Title" name="post[title]" value="<%= @post.title %>">
+        </div>
+        <div class="form-field">
+            <textarea id="content" placeholder="This post is about..." name="post[content]" rows="3" cols="50"><%= @post.content %></textarea>
+        </div>
+
+        <button class="submitbtn" type="submit">Submit Changes</button>
+        <a class="cancelbtn" href="/boards/<%= @board.id %>">Cancel</a>
+    </form>
+</section>
