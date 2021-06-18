@@ -13,11 +13,28 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: rgb(76,80,87);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
   }
+
+  header {
+    margin: 10px auto;
+    max-width: 960px;
+    padding: 10px 2.25% 5px 2.25%; /* 18px / 800px */
+    width: 90%;
+  }
+    header a {
+      text-decoration: none;
+    }
+    
+    header h1{
+      color: #fff;
+      font-size: 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 50;
+    }
 
   .wrapper {
     background: #fff;
