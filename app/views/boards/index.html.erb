@@ -5,7 +5,10 @@
     <li>
         <a href="/boards/<%= board.id %>">
         <%= board.title %>
-        </a> - <%= board.description %>
+        </a> 
+        <% if !board.description.empty? %>
+            - <%= board.description %>
+        <% end %>
     </li>
 <% end %>
 </ul>
