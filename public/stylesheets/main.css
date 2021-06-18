@@ -25,16 +25,10 @@
     padding: 10px 2.25% 5px 2.25%; /* 18px / 800px */
     width: 90%;
   }
-<<<<<<< HEAD
     header a {
       text-decoration: none;
     }
     header h1 a {
-=======
-
-    header h1 a {
-      text-decoration: none;
->>>>>>> 4002db1d766a79e1546f334c1b36bdd16307c668
       color: #000;
       font-size: 40px;
       font-family: Arial, Helvetica, sans-serif;
