@@ -19,9 +19,14 @@ class PostsController < ApplicationController
 
     # edit
     get "/boards/:board_id/posts/:id/edit" do
+        redirect_if_not_logged_in
         @board = Board.find(params[:board_id])
         @post = @board.posts.find(params[:id])
-        erb :"posts/edit.html"
+        if @post.user == current_user
+            erb :"posts/edit.html"
+        else
+            redirect "/boards/#{@board.id}"
+        end
     end
 
     # patch
