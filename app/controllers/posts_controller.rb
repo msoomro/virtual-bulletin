@@ -24,10 +24,13 @@ class PostsController < ApplicationController
     patch "/boards/:board_id/posts/:id" do
         board = Board.find(params[:board_id])
         post = board.posts.find(params[:id])
-        if post.update_attributes(params[:post])
-            redirect "/boards/#{board.id}"
-        else
-            erb :'posts/edit'
+        if post.user == current_user
+            if post.update_attributes(params[:post])
+                redirect "/boards/#{board.id}"
+            else
+                flash[:errors] = post.errors.full_messages
+                redirect "/boards/#{board.id}/posts/#{post.id}/edit"
+            end
         end
     end
 
