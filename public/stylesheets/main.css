@@ -175,6 +175,7 @@
       padding: 5px 7px;
       border: none;
       background-color: #fff;
+<<<<<<< HEAD
     }
 
       .board-show-new-post button:hover, button:active {
@@ -182,6 +183,11 @@
         color: #fff;
       }
 
+=======
+      
+    }
+
+>>>>>>> 5ba05e6f5cbfcb80e0699ac7a05f95bfaf7a1a43
 }
 
 @media screen and (max-width: 600px) {
