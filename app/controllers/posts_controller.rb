@@ -6,8 +6,12 @@ class PostsController < ApplicationController
             @board = Board.find(params[:board_id])
             @post = @board.posts.new(params[:post])
             @post.user_id = current_user.id
-            @post.save
-            redirect "/boards/#{@board.id}"
+            if @post.save
+                redirect "/boards/#{@board.id}"
+            else
+                flash[:errors] = @post.errors.full_messages
+                redirect "/boards/#{@board.id}"
+            end
         else
             redirect_if_not_logged_in
         end
