@@ -125,7 +125,9 @@
 
 /*** Users ***/
   /* User Show */
-
+  .user-show-wrapper h1 {
+    font-weight: 900;
+  }
 
 /*** Boards ***/
   /* Board Index */

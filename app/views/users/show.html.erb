@@ -1,20 +1,22 @@
-<h1><%= @user.username %></h1>
-<hr><br>
+<section class="user-show-wrapper">
+    <h1><%= @user.username %></h1>
+    <hr><br>
 
-<% if @user.boards.any? %>
-    <h3>Boards</h3>
-    <ul class="board-list">
-        <% @user.boards.each do |board| %>
-            <li>
-            <a href="/boards/<%= board.id %>">
-                <%= board.title %>
-            </a> - <%= board.description %>
-            </li>
+    <% if @user.boards.any? %>
+        <h3>Boards</h3>
+        <ul class="board-list">
+            <% @user.boards.each do |board| %>
+                <li>
+                <a href="/boards/<%= board.id %>">
+                    <%= board.title %>
+                </a> - <%= board.description %>
+                </li>
+            <% end %>
+        </ul>
+    <% else %>
+        <p>No boards</p>
+        <% if @user == current_user %>
+            <p><a href="/boards/new">Create your first board!</a></p>
         <% end %>
-    </ul>
-<% else %>
-    <p>No boards</p>
-    <% if @user == current_user %>
-        <p><a href="/boards/new">Create your first board!</a></p>
     <% end %>
-<% end %>
+</section>
