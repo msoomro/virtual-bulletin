@@ -122,6 +122,14 @@
   }
 
 /* --- Users --- */
+  /* User New */
+  .user-new-wrapper {
+    margin: -5px;
+    padding: 30px;
+    color: #fff;
+    background-color: rgba(0,0,0,.9);
+  }
+
   /* User Show */
   .user-show-wrapper h1 {
     font-weight: 900;
@@ -303,6 +311,15 @@
   /* --- Post --- */
     /* Post Edit */
     .post-edit-wrapper {
+      margin: -5px;
+      padding: 30px;
+      color: #fff;
+      background-color: rgba(0,0,0,.9);
+    }
+
+  /* --- Session --- */
+    /* Login */
+    .login-wrapper {
       margin: -5px;
       padding: 30px;
       color: #fff;
