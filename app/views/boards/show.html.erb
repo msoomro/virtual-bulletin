@@ -3,16 +3,28 @@
 <br><hr><br>
 <p><%= @board.description %></p>
 
-<% if @board.posts.any? %>
-    <% @board.posts.each do |post| %>
-        <div class="post">
-            <h5><%= post.title %></h5>
-            <h6><%= post.user.username %></h6>
-            <p><%= post.content %></p><br>
-        </div>
-    <% end %>
-<% end %>
+<!-- Create a Post -->
+    <form action="/boards/<%= @board.id %>/posts" method="post">
+        <label for="title">New Post: </label>
+        <input type="text" id="title" placeholder="Title" name="post[title]"><br>
+        <label for="content"> </label><br>
+        <textarea id="content" placeholder="This post is about..." name="post[content]" rows="3" cols="50"></textarea><br>
+        <button type="submit">Add Post</button>
+    </form>
+    <br>
 
+<!-- Display Posts -->
+    <% if @board.posts.any? %>
+        <% @board.posts.each do |post| %>
+            <div class="post">
+                <h5><%= post.title %></h5>
+                <h6><%= post.user.username %></h6>
+                <p><%= post.content %></p><br>
+            </div>
+        <% end %>
+    <% end %>
+
+<!-- Edit and Delete Board -->
 <% if current_user == @board.user %>
     <a href="/boards/<%= @board.id %>/edit">Edit Board</a>
     <form action="/boards/<%= @board.id %>" method="post">
