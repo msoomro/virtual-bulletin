@@ -59,7 +59,7 @@ class BoardsController < ApplicationController
         board = Board.find(params[:id])
         if board.user == current_user
             board.destroy
-            redirect "/boards"
+            redirect "/users/#{current_user.id}"
         end
     end
 
