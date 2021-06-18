@@ -13,4 +13,11 @@ class PostsController < ApplicationController
         end
     end
 
+    # edit
+    get "/boards/:board_id/posts/:id/edit" do
+        @board = Board.find(params[:board_id])
+        @post = @board.posts.find(params[:id])
+        erb :"posts/edit.html"
+    end
+
 end
