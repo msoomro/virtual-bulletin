@@ -6,10 +6,10 @@ Specs:
 - [x] Include more than one model class (e.g. User, Post, Category) -- User, Board, Post
 - [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts) -- User has_many Boards, User has_many Posts
 - [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User) -- Board belongs_to User, Post belongs_to Board
-- [x] Include user accounts with unique login attribute (username or email) -- validated username
+- [x] Include user accounts with unique login attribute (username or email) -- validated username uniqueness
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying -- Board has create, show, edit, and delete routes
 - [x] Ensure that users can't modify content created by other users -- validations in models and controllers
-- [x] Include user input validations -- min and max requirments for password, uniqueness and presence of username, etc.
+- [x] Include user input validations -- min and max requirements for password, uniqueness and presence of username, etc.
 - [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new) -- flash hash used to display validation errors
 - [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code -- yes, yes and there is no contributers guide or license
 
