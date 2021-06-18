@@ -1,12 +1,18 @@
-<h1>Edit <%= @board.title %></h1>
+<section class="board-edit-wrapper">    
+    <h1>Edit <%= @board.title %></h1>
 
-<form action="/boards/<%= @board.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <label for="title">Title</label><br>
-    <input type="text" id="title" name="board[title]" value="<%= @board.title %>"><br>
-    <label for="description">Description</label><br>
-    <textarea id="description" name="board[description]" rows="4" cols="32"><%= @board.description %></textarea><br>
+    <form action="/boards/<%= @board.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">    
+    <div class="form-field">
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="board[title]" size="50" value="<%= @board.title %>">
+        </div>
+        <div class="form-field">
+            <label for="description">Description</label><br>
+            <textarea id="description" name="board[description]" rows="4" cols="53"><%= @board.description %></textarea>
+        </div>
 
-    <button type="submit">Submit Changes</button>
-    <a href="/boards/<%= @board.id %>">Cancel</a>
-</form>
+        <button class="submitbtn" type="submit">Submit Changes</button>
+        <a class="cancelbtn" href="/boards/<%= @board.id %>">Cancel</a>
+    </form>
+</section>
