@@ -20,9 +20,15 @@
                 <h5><%= post.title %></h5>
                 <h6><%= post.user.username %></h6>
                 <p><%= post.content %></p>
+                
                 <% if current_user == post.user %>
                     <a href="/boards/<%= @board.id %>/posts/<%= post.id %>/edit">Edit</a>
+                    <form action="/boards/<%= @board.id %>/posts/<%= post.id %>" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <button class="deletebtn" type="submit">Delete Post</button>
+                    </form>
                 <% end %>
+                
             </div>
             <br>
         <% end %>
