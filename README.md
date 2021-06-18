@@ -1,7 +1,7 @@
 Virtual Bulletin
 
 A web application that allows users to CRUD bulletin boards and posts.
-
+Watch a video overview of how the application works here: https://youtu.be/Jqy-UxkbiEo
 
 To run the application locally, download the code and create a .env file in the project's root directory with the following:
 ```
