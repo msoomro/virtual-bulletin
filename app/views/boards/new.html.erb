@@ -1,9 +1,16 @@
-<h1>Create a Board</h1>
+<section class="board-new-wrapper">
+    <h1>Create a Board</h1>
 
-<form action="/boards" method="post">
-    <label for="title">Title</label><br>
-    <input type="text" id="title" name="board[title]"><br>
-    <label for="description">Description</label><br>
-    <textarea id="description" name="board[description]" rows="4" cols="32"></textarea><br>
-    <button type="submit">Create Board</button>
-</form>
+    <form action="/boards" method="post">
+        <div class="form-field">
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="board[title]">
+        </div>
+        <div class="form-field">
+            <label for="description">Description</label><br>
+            <textarea id="description" name="board[description]" rows="4" cols="32"></textarea>
+        </div>
+
+        <button class="submitbtn" type="submit">Create Board</button>
+    </form>
+</section>

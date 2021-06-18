@@ -121,13 +121,13 @@
     padding-top: 20px;
   }
 
-/*** Users ***/
+/* --- Users --- */
   /* User Show */
   .user-show-wrapper h1 {
     font-weight: 900;
   }
 
-/*** Boards ***/
+/* --- Boards --- */
   /* Board Index */
   .board-list li {
     padding: 10px;
@@ -174,7 +174,7 @@
       max-width: 95%;
     }
 
-    .board-show-new-post button {
+    .submitbtn {
       margin-top: 6px;
       padding: 5px 7px;
       border: none;
@@ -182,8 +182,8 @@
       background-color: #fff;
     }
 
-      .board-show-new-post button:hover, 
-      .board-show-new-post button:active {
+      .submitbtn:hover, 
+      .submitbtn:active {
         background-color: red;
         color: #fff;
       }
@@ -273,6 +273,19 @@
     color: #000;
     cursor: pointer;
   }
+
+  /* Board New */
+  .board-new-wrapper {
+    margin: -5px;
+    padding: 30px;
+    color: #fff;
+    background-color: rgba(0,0,0,.9);
+  }
+
+    .form-field {
+      padding: 7px 0;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
