@@ -15,23 +15,27 @@
   </head>
   <body>
     <header>
-      <a href="/"><h1>Virtual Bulletin</h1></a>
+      <div>
+        <a href="/"><h1>Virtual Bulletin</h1></a>
+      </div>
+
+      <div>
+        <nav>
+          <% if logged_in? %>
+            <a href="/profile">My Profile</a>
+            <a href="/boards">All Boards</a>
+            <a href="/boards/new">New Board</a>
+            <a href="/logout">Log Out</a>
+          <% else %>
+            <a href="/users/new">Sign Up</a>
+            <a href="/login">Log In</a>
+          <% end %>
+        </nav>
+      </div>
+
     </header>
 
     <div class="wrapper">
-    
-    <nav>
-      <% if logged_in? %>
-        <a href="/logout">Log Out</a>  |  
-        <a href="/profile">My Profile</a>  |  
-        <a href="/users">All Users</a>  |  
-        <a href="/boards">All Boards</a>  |  
-        <a href="/boards/new">New Board</a>
-      <% else %>
-        <a href="/users/new">Sign Up</a>  |  
-        <a href="/login">Log In</a>
-      <% end %>
-    </nav>
 
     <% if flash[:errors] %>
       <ul class="errors">
