@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
   }
-
+  
   html, body {
     height: 100%;
     width: 100%;
@@ -71,7 +71,7 @@
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 30px;
     line-height: 54px;
     font-weight: 50;
   }
@@ -122,6 +122,18 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  /* Boards */
+  .board-list li {
+    padding: 10px;
+    margin: 10px 0;
+    border-style: solid;
+  }
+
+    .board-list li a {
+      color: red;
+      text-decoration: solid;
+    }
 }
 
 @media screen and (max-width: 600px) {
