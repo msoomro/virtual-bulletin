@@ -123,7 +123,8 @@
     padding-top: 20px;
   }
 
-  /* Boards */
+/*** Boards ***/
+  /* Board Index */
   .board-list li {
     padding: 10px;
     margin: 10px 0;
@@ -134,6 +135,28 @@
       color: red;
       text-decoration: solid;
     }
+  
+  /* Board Show */
+  .board-show-wrapper {
+    margin: -5px;
+    padding: 30px;
+    border-style: solid;
+    border-color: red;
+
+  }
+
+    .board-show-wrapper a{
+      color: red;
+      text-decoration: none;
+    }
+
+  .board-show-header h1{
+    font-weight: 900;
+  }
+
+  .board-show-header hr{
+    background-color: red;
+  }
 }
 
 @media screen and (max-width: 600px) {

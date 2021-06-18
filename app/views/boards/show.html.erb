@@ -1,44 +1,56 @@
-<h1><%= @board.title %></h1>
-<h4><a href="/users/<%= @board.user.id %>"><%= @board.user.username %></a></h4>
-<br><hr><br>
-<p><%= @board.description %></p>
+<section class="board-show-wrapper">
 
-<!-- Create a Post -->
-    <form action="/boards/<%= @board.id %>/posts" method="post">
-        <label for="title">New Post: </label>
-        <input type="text" id="title" placeholder="Title" name="post[title]"><br>
-        <label for="content"> </label><br>
-        <textarea id="content" placeholder="This post is about..." name="post[content]" rows="3" cols="50"></textarea><br>
-        <button type="submit">Add Post</button>
-    </form>
-    <br>
+    <div class="board-show-header">
+        <h1><%= @board.title %></h1>
+        <p><%= @board.description %></p>
+        <h4><a href="/users/<%= @board.user.id %>"><%= @board.user.username %></a></h4>
+        <br><hr><br>
+    </div>
 
-<!-- Display Posts -->
-    <% if @board.posts.any? %>
-        <% @board.posts.each do |post| %>
-            <div class="post">
-                <h5><%= post.title %></h5>
-                <h6><%= post.user.username %></h6>
-                <p><%= post.content %></p>
-                
-                <% if current_user == post.user %>
-                    <a href="/boards/<%= @board.id %>/posts/<%= post.id %>/edit">Edit</a>
-                    <form action="/boards/<%= @board.id %>/posts/<%= post.id %>" method="post">
-                        <input type="hidden" name="_method" value="delete">
-                        <button class="deletebtn" type="submit">Delete Post</button>
-                    </form>
-                <% end %>
-                
-            </div>
-            <br>
+    <!-- Create a Post -->
+    <div class="board-show-new-post">
+        <form action="/boards/<%= @board.id %>/posts" method="post">
+            <label for="title">New Post: </label>
+            <input type="text" id="title" placeholder="Title" name="post[title]"><br>
+            <label for="content"> </label><br>
+            <textarea id="content" placeholder="This post is about..." name="post[content]" rows="3" cols="50"></textarea><br>
+            <button type="submit">Add Post</button>
+        </form>
+        <br>
+    </div>
+
+    <!-- Display Posts -->
+    <div class="board-show-all-posts">
+        <% if @board.posts.any? %>
+            <% @board.posts.each do |post| %>
+                <div class="post">
+                    <h5><%= post.title %></h5>
+                    <h6><%= post.user.username %></h6>
+                    <p><%= post.content %></p>
+                    
+                    <% if current_user == post.user %>
+                        <a href="/boards/<%= @board.id %>/posts/<%= post.id %>/edit">Edit</a>
+                        <form action="/boards/<%= @board.id %>/posts/<%= post.id %>" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="deletebtn" type="submit">Delete Post</button>
+                        </form>
+                    <% end %>
+                    
+                </div>
+                <br>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
 
-<!-- Edit and Delete Board -->
-<% if current_user == @board.user %>
-    <a href="/boards/<%= @board.id %>/edit">Edit Board</a>
-    <form action="/boards/<%= @board.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button class="deletebtn" type="submit">Delete Board</button>
-    </form>
-<% end %>
+    <!-- Edit and Delete Board -->
+    <div class="board-show-footer">
+        <% if current_user == @board.user %>
+            <a href="/boards/<%= @board.id %>/edit">Edit Board</a>
+            <form action="/boards/<%= @board.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button class="deletebtn" type="submit">Delete Board</button>
+            </form>
+        <% end %>
+    </div>
+    
+</section>
