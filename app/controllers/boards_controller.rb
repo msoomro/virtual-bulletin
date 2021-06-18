@@ -25,14 +25,20 @@ class BoardsController < ApplicationController
 
     #show
     get "/boards/:id" do
+        redirect_if_not_logged_in
         @board = Board.find(params[:id])
         erb :"/boards/show.html"
     end
 
     #edit
     get "/boards/:id/edit" do
+        redirect_if_not_logged_in
         @board = Board.find(params[:id])
-        erb :"boards/edit.html"
+        if @board.user == current_user
+            erb :"boards/edit.html"
+        else
+            redirect "/boards/#{@board.id}"
+        end
     end
 
     #patch
