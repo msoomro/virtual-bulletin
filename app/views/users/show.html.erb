@@ -3,11 +3,15 @@
 
 <% if @user.boards.any? %>
     <h3>Boards</h3>
-    <% @user.boards.each do |board| %>
-        <a href="/boards/<%= board.id %>">
-            <%= board.title %>
-        </a><br>
-    <% end %>
+    <ul class="board-list">
+        <% @user.boards.each do |board| %>
+            <li>
+            <a href="/boards/<%= board.id %>">
+                <%= board.title %>
+            </a> - <%= board.description %>
+            </li>
+        <% end %>
+    </ul>
 <% else %>
     <p>No boards</p>
     <% if @user == current_user %>
