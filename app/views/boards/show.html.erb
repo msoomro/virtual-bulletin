@@ -10,13 +10,10 @@
     <!-- Create a Post -->
     <div class="board-show-new-post">
         <form action="/boards/<%= @board.id %>/posts" method="post">
-            <label for="title">New Post: </label>
-            <input type="text" id="title" placeholder="Title" name="post[title]"><br>
-            <label for="content"> </label><br>
-            <textarea id="content" placeholder="This post is about..." name="post[content]" rows="3" cols="50"></textarea><br>
+            <input type="text" id="title" placeholder="  Post Title" name="post[title]" size="50"><br><br>
+            <textarea id="content" placeholder=" This post is about..." name="post[content]" rows="3" cols="150"></textarea><br>
             <button type="submit">Add Post</button>
         </form>
-        <br>
     </div>
 
     <!-- Display Posts -->
@@ -52,5 +49,5 @@
             </form>
         <% end %>
     </div>
-    
+
 </section>
