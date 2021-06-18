@@ -20,4 +20,15 @@ class PostsController < ApplicationController
         erb :"posts/edit.html"
     end
 
+    # patch
+    patch "/boards/:board_id/posts/:id" do
+        board = Board.find(params[:board_id])
+        post = board.posts.find(params[:id])
+        if post.update_attributes(params[:post])
+            redirect "/boards/#{board.id}"
+        else
+            erb :'posts/edit'
+        end
+    end
+
 end
