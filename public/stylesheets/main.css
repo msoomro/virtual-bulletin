@@ -286,6 +286,11 @@
       padding: 7px 0;
     }
 
+    .form-field input,
+    .form-field textarea {
+      padding: 3px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
