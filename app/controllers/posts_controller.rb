@@ -38,8 +38,10 @@ class PostsController < ApplicationController
     delete "/boards/:board_id/posts/:id" do
         board = Board.find(params[:board_id])
         post = board.posts.find(params[:id])
-        post.destroy
-        redirect "/boards/#{board.id}"
+        if post.user == current_user
+            post.destroy
+            redirect "/boards/#{board.id}"
+        end
     end
 
 end
