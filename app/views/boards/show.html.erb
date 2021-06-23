@@ -23,7 +23,7 @@
                 <div class="post">
                     <div class="post-header">
                         <h5><%= post.title %></h5>
-                        <h6><a href="/users/<%= @board.user.id %>"><%= post.user.username %></a></h6>
+                        <h6><a href="/users/<%= post.user.id %>"><%= post.user.username %></a></h6>
                     </div>
                     <p class="post-content"><%= post.content %></p>
                     
