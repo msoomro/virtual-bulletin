@@ -59,6 +59,9 @@ class BoardsController < ApplicationController
         board = Board.find(params[:id])
         if board.user == current_user
             board.destroy
+            board.posts.each do |post|
+                post.destroy
+            end
             redirect "/users/#{current_user.id}"
         end
     end
