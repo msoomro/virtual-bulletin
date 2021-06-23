@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect "/"
         else
-            flash[:errors] = ["Unsuccsessful Login. Try again."]
+            flash[:errors] = ["Unsuccessful Login. Try again."]
             redirect "/login"
         end
     end
